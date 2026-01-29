@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=audio-recorder
+Comment=Record microphone and system audio simultaneously
+Exec=audio-recorder
+Icon=audio-recorder
+Categories=AudioVideo;Audio;Recorder;
+Terminal=true

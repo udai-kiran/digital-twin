@@ -1,0 +1,78 @@
+[project]
+name = "audio-recorder"
+version = "1.0.0"
+description = "CLI tool to record microphone and system audio simultaneously"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [
+    {name = "Audio Recorder Team"}
+]
+keywords = ["audio", "recording", "pipewire", "pulseaudio", "linux"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Multimedia :: Sound/Audio :: Capture/Recording",
+]
+dependencies = [
+    "sounddevice>=0.4.6",
+    "soundfile>=0.12.0",
+    "pulsectl>=23.5.0",
+    "numpy>=1.24.0",
+    "faster-whisper>=1.0.0",
+    "scipy>=1.10.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "mypy>=1.0",
+    "ruff>=0.1.0",
+]
+
+[project.scripts]
+audio-recorder = "audio_recorder.cli.app:main"
+
+[project.urls]
+Homepage = "https://github.com/example/audio-recorder"
+Issues = "https://github.com/example/audio-recorder/issues"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["audio_recorder"]
+
+[dependency-groups]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "mypy>=1.0",
+    "ruff>=0.1.0",
+    "python-appimage>=1.4.5",
+]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+warn_return_any = true
+warn_unused_configs = true
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "D", "UP", "B", "C4", "SIM"]
+ignore = ["D100", "D104"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --cov=audio_recorder"

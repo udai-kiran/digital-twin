@@ -1,0 +1,39 @@
+{
+  "mcpServers": {
+    "sequential-thinking": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ]
+    },
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "@playwright/mcp@latest"
+      ]
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/work"
+      ]
+    },
+    "git": {
+      "command": "uvx",
+      "args": [
+        "mcp-server-git"
+      ]
+    },
+    "postgresql-mcp": {
+      "command": "npx",
+      "args": [
+        "@henkey/postgres-mcp-server",
+        "--connection-string",
+        "postgresql://postgres:postgres@192.168.2.196:5432/claude"
+      ]
+    }
+  }
+}

@@ -1,0 +1,28 @@
+# Virtual environment (managed by uv)
+.venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+
+# AppImage build artifacts
+AppDir/
+*.AppImage
+appimage-build/opt/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
+
+# mypy
+.mypy_cache/

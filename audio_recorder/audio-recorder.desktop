@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Audio Recorder
+Comment=Record microphone and system audio simultaneously
+Exec=audio-recorder
+Icon=audio-recorder
+Terminal=true
+Categories=AudioVideo;Audio;Recorder;
+Keywords=audio;record;microphone;speaker;pipewire;pulseaudio;
